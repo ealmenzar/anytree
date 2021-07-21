@@ -74,6 +74,7 @@ class Walker(object):
         c = Walker.__calc_common(s, e)
         assert c[0] is start.root
         len_c = len(c)
+        print("len_c = ", len_c)
         # up
         if start is c[-1]:
             up = tuple()
