@@ -8,6 +8,8 @@ class Walker(object):
         super(Walker, self).__init__()
     
     def distance(self, start, end):
+        s = start.path
+        e = end.path
         return Walker.__calc_dist(s, e)
 
     def walk(self, start, end):
