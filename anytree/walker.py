@@ -6,6 +6,9 @@ class Walker(object):
     def __init__(self):
         """Walk from one node to another."""
         super(Walker, self).__init__()
+    
+    def distance(self, start, end):
+        return Walker.__calc_dist(s, e)
 
     def walk(self, start, end):
         """
@@ -72,8 +75,6 @@ class Walker(object):
             raise WalkError(msg)
         # common
         c = Walker.__calc_common(s, e)
-        d = Walker.__calc_dist(s, e)
-        print("d = ", d)
         assert c[0] is start.root
         len_c = len(c)
         # up
