@@ -72,10 +72,10 @@ class Walker(object):
             raise WalkError(msg)
         # common
         c = Walker.__calc_common(s, e)
+        d = Walker.__calc_dist(s, e)
+        print("d = ", d)
         assert c[0] is start.root
         len_c = len(c)
-        print("c = ", c)
-        print("len_c = ", len_c)
         # up
         if start is c[-1]:
             up = tuple()
@@ -91,6 +91,13 @@ class Walker(object):
     @staticmethod
     def __calc_common(s, e):
         return tuple([si for si, ei in zip(s, e) if si is ei])
+    
+    @staticmethod
+    def __calc_dist(s, e):
+        i = 0
+        for si, ei in zip(s, e):
+            if si is not ei: i += 1
+        return i
 
 
 class WalkError(RuntimeError):
